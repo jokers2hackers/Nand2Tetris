@@ -14,5 +14,173 @@ CHIP Mux4Way16 {
     OUT out[16];
     
     PARTS:
-    //// Replace this comment with your code.
+     // using the already implemented not, and , or gates
+    Not (in = sel[0], out = notsel0);
+    Not (in = sel[1], out = notsel1);
+
+    And (a = notsel0, b = notsel1, out = sel00);
+    And (a = sel[0], b = notsel1, out = sel01);
+    And (a = notsel0, b = sel[1], out = sel10);
+    And (a = sel[0], b = sel[1], out = sel11);
+    // bit0
+    And (a = a[0], b = sel00, out = anda);
+    And (a = b[0], b = sel01, out = andb);
+    And (a = c[0], b = sel10, out = andc);
+    And (a = d[0], b = sel11, out = andd);
+
+    Or (a = anda, b = andb, out = ab);
+    Or (a = ab, b = andc, out = abc);
+    Or (a = abc, b = andd, out = out[0]);
+
+    // bit1
+    And (a = a[1], b = sel00, out = anda1);
+    And (a = b[1], b = sel01, out = andb1);
+    And (a = c[1], b = sel10, out = andc1);
+    And (a = d[1], b = sel11, out = andd1);
+
+    Or (a = anda1, b = andb1, out = ab1);
+    Or (a = ab1, b = andc1, out = abc1);
+    Or (a = abc1, b = andd1, out = out[1]);
+
+    // bit2
+    And (a = a[2], b = sel00, out = anda2);
+    And (a = b[2], b = sel01, out = andb2);
+    And (a = c[2], b = sel10, out = andc2);
+    And (a = d[2], b = sel11, out = andd2);
+
+    Or (a = anda2, b = andb2, out = ab2);
+    Or (a = ab2, b = andc2, out = abc2);
+    Or (a = abc2, b = andd2, out = out[2]);
+
+    // bit3
+    And (a = a[3], b = sel00, out = anda3);
+    And (a = b[3], b = sel01, out = andb3);
+    And (a = c[3], b = sel10, out = andc3);
+    And (a = d[3], b = sel11, out = andd3);
+
+    Or (a = anda3, b = andb3, out = ab3);
+    Or (a = ab3, b = andc3, out = abc3);
+    Or (a = abc3, b = andd3, out = out[3]);
+
+    // bit4
+    And (a = a[4], b = sel00, out = anda4);
+    And (a = b[4], b = sel01, out = andb4);
+    And (a = c[4], b = sel10, out = andc4);
+    And (a = d[4], b = sel11, out = andd4);
+
+    Or (a = anda4, b = andb4, out = ab4);
+    Or (a = ab4, b = andc4, out = abc4);
+    Or (a = abc4, b = andd4, out = out[4]);
+
+    // bit5
+    And (a = a[5], b = sel00, out = anda5);
+    And (a = b[5], b = sel01, out = andb5);
+    And (a = c[5], b = sel10, out = andc5);
+    And (a = d[5], b = sel11, out = andd5);
+
+    Or (a = anda5, b = andb5, out = ab5);
+    Or (a = ab5, b = andc5, out = abc5);
+    Or (a = abc5, b = andd5, out = out[5]);
+
+
+    // bit6
+    And (a = a[6], b = sel00, out = anda6);
+    And (a = b[6], b = sel01, out = andb6);
+    And (a = c[6], b = sel10, out = andc6);
+    And (a = d[6], b = sel11, out = andd6);
+
+    Or (a = anda6, b = andb6, out = ab6);
+    Or (a = ab6, b = andc6, out = abc6);
+    Or (a = abc6, b = andd6, out = out[6]);
+
+    // bit7
+    And (a = a[7], b = sel00, out = anda7);
+    And (a = b[7], b = sel01, out = andb7);
+    And (a = c[7], b = sel10, out = andc7);
+    And (a = d[7], b = sel11, out = andd7);
+
+    Or (a = anda7, b = andb7, out = ab7);
+    Or (a = ab7, b = andc7, out = abc7);
+    Or (a = abc7, b = andd7, out = out[7]);
+
+    // bit8
+    And (a = a[8], b = sel00, out = anda8);
+    And (a = b[8], b = sel01, out = andb8);
+    And (a = c[8], b = sel10, out = andc8);
+    And (a = d[8], b = sel11, out = andd8);
+
+    Or (a = anda8, b = andb8, out = ab8);
+    Or (a = ab8, b = andc8, out = abc8);
+    Or (a = abc8, b = andd8, out = out[8]);
+
+    // bit9
+    And (a = a[9], b = sel00, out = anda9);
+    And (a = b[9], b = sel01, out = andb9);
+    And (a = c[9], b = sel10, out = andc9);
+    And (a = d[9], b = sel11, out = andd9);
+
+    Or (a = anda9, b = andb9, out = ab9);
+    Or (a = ab9, b = andc9, out = abc9);
+    Or (a = abc9, b = andd9, out = out[9]);
+
+    // bit10
+    And (a = a[10], b = sel00, out = anda10);
+    And (a = b[10], b = sel01, out = andb10);
+    And (a = c[10], b = sel10, out = andc10);
+    And (a = d[10], b = sel11, out = andd10);
+
+    Or (a = anda10, b = andb10, out = ab10);
+    Or (a = ab10, b = andc10, out = abc10);
+    Or (a = abc10, b = andd10, out = out[10]);
+
+    // bit11
+    And (a = a[11], b = sel00, out = anda11);
+    And (a = b[11], b = sel01, out = andb11);
+    And (a = c[11], b = sel10, out = andc11);
+    And (a = d[11], b = sel11, out = andd11);
+
+    Or (a = anda11, b = andb11, out = ab11);
+    Or (a = ab11, b = andc11, out = abc11);
+    Or (a = abc11, b = andd11, out = out[11]);
+
+    // bit12
+    And (a = a[12], b = sel00, out = anda12);
+    And (a = b[12], b = sel01, out = andb12);
+    And (a = c[12], b = sel10, out = andc12);
+    And (a = d[12], b = sel11, out = andd12);
+
+    Or (a = anda12, b = andb12, out = ab12);
+    Or (a = ab12, b = andc12, out = abc12);
+    Or (a = abc12, b = andd12, out = out[12]);
+
+    // bit13
+    And (a = a[13], b = sel00, out = anda13);
+    And (a = b[13], b = sel01, out = andb13);
+    And (a = c[13], b = sel10, out = andc13);
+    And (a = d[13], b = sel11, out = andd13);
+
+    Or (a = anda13, b = andb13, out = ab13);
+    Or (a = ab13, b = andc13, out = abc13);
+    Or (a = abc13, b = andd13, out = out[13]);
+
+    // bit14
+    And (a = a[14], b = sel00, out = anda14);
+    And (a = b[14], b = sel01, out = andb14);
+    And (a = c[14], b = sel10, out = andc14);
+    And (a = d[14], b = sel11, out = andd14);
+
+    Or (a = anda14, b = andb14, out = ab14);
+    Or (a = ab14, b = andc14, out = abc14);
+    Or (a = abc14, b = andd14, out = out[14]);
+
+    // bit15
+    And (a = a[15], b = sel00, out = anda15);
+    And (a = b[15], b = sel01, out = andb15);
+    And (a = c[15], b = sel10, out = andc15);
+    And (a = d[15], b = sel11, out = andd15);
+
+    Or (a = anda15, b = andb15, out = ab15);
+    Or (a = ab15, b = andc15, out = abc15);
+    Or (a = abc15, b = andd15, out = out[15]);
+
 }

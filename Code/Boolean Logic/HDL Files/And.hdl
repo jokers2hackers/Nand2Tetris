@@ -11,5 +11,8 @@ CHIP And {
     OUT out;
     
     PARTS:
-    //// Replace this comment with your code.
+    // NAND gate implementation assumed to be built-in.
+    // NOT gate implementation done in Not.hdl
+    Nand (a = a, b = b, out = nandab);
+    Not(in = nandab, out = out);
 }
